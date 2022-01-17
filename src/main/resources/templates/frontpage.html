@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+<head>
+    <meta charset="UTF-8">
+    <title>Breathe Right Clinic</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.1/examples/carousel/">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-JEW9xMcG8R+pH31jmWH6WWP0WintQrMb4s7ZOdauHnUtxwoG2vI5DkLtS3qm9Ekf"
+            crossorigin="anonymous"></script>
+    <style>
+        .navbar-brand {
+            font-family: "Droid Sans Mono Slashed";
+        }
+
+        .nav-link {
+            color: black;
+            font-family: "Times New Roman";
+        }
+
+        .carousel-item {
+            size: auto;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <nav class="navbar navbar-light" style="background-color: white">
+        <div class="container-fluid" style="justify-content: center">
+            <div class="navbar-brand">
+                BREATHE RIGHT CLINIC
+            </div>
+        </div>
+        <div class="container justify-content-center">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/frontpage">Home</a>
+                </li>
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <a class="nav-link dropdown" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown"
+                           aria-expanded="false">
+                            Conditions
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <li><a class="nav-link item" href="/respiratory-disorders">Respiratory disorders</a></li>
+                            <li><a class="nav-link item" href="/coronavirus-recovery-rehab">Coronavirus Recovery &
+                                Rehab</a></li>
+                            <li><a class="nav-link item" href="/chronic-cough">Chronic cough</a></li>
+                        </ul>
+                    </div>
+
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/respiratory-physiotherapy">Respiratory Physiotherapy</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/courses">Courses</a>
+                </li>
+                <div class="btn-group">
+                    <a class="nav-link" type="button" href="/power-breathe">Powerbreathe</a>
+                </div>
+                <li class="nav-item">
+                    <div class="btn-group">
+                        <a class="nav-link dropdown" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                           aria-expanded="false">Appointments</a>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                            <li><a class="nav-link item" href="/appointments">Consult appointments</a></li>
+                            <li><a class="nav-link item" href="/book-a-course">Book a course</a></li>
+                        </ul>
+                    </div>
+                </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/about-us">About Us</a>
+        </li>
+        <li class="nav-item">
+            <div class="btn-group">
+                <a class="nav-link dropdown" type="button" id="dropdownMenuButton2" data-bs-toggle="dropdown"
+                   aria-expanded="false">
+                    My account
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton2">
+                    <li><a class="nav-link item" href="/login" sec:authorize="!isAuthenticated()">Login</a></li>
+                    <li><a class="nav-link item" href="/cart" sec:authorize="isAuthenticated()">Cart</a></li>
+                    <li><a class="nav-link item" href="/signup" sec:authorize="!isAuthenticated()">Register</a>
+                    </li>
+                    <li><a class="nav-link item" href="/logout" sec:authorize="isAuthenticated()">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </li>
+        </ul>
+        </div>
+    </nav>
+</header>
+
+<div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="/images/carousel1.jpg" width="100%" height="60%">
+        </div>
+        <div class="carousel-item">
+            <img src="/images/carousel2.jpg" width="100%" height="60%">
+
+        </div>
+        <div class="carousel-item">
+            <img src="/images/carousel3.jpg" width="100%" height="60%">
+        </div>
+        <div class="carousel-item">
+            <a href="#"><img src="/images/carousel4.jpg" width="100%" height="60%" alt="Picture"></a>
+        </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden"></span>
+    </button>
+</div>
+<br>
+<div class="mt-5">
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="h-100 mb-4 bg-light border rounded-2">
+                    <div class="container-fluid py-5">
+                        <h1 class="display-4 fw-bold">Easy to Say, Harder to do</h1>
+                        <p class="col-md-12 fs-5" style="text-align: justify">
+                            One in ten people suffer from a breathing pattern disorder or chronic over-breathing at
+                            some point in their lives.
+                            Stress, injuries and illness can affect how you breathe.
+                            In turn, how you breathe can affect how you feel. Acute over-breathing can cause some
+                            troubling symptoms
+                            such as dizziness, shortness of breath and anxiety.
+                            Prolonged over-breathing can lead to a decreased oxygen supply to the tissues and produces
+                            more varied
+                            symptoms, such as:</p>
+                        <p class="col-md-12 fs-5" style=" color: #1c87c9; text-align: center">
+                            Fatigue and weakness<br> Poor memory recall and difficulty concentrating<br>
+                            Abdominal cramping and bloating<br> Chest pain<br>
+                            Reduced pain tolerance<br> Muscle spasms and cramping<br>
+                            Disturbed sleep
+                        </p>
+                        <p class="col-md-12 fs-5" style="text-align: justify">
+                            <img src="/images/article1.jpg" class="rounded float-end" alt="Picture">
+                            Worry and anxiety around these symptoms sets up a vicious cycle and can lead to further
+                            overbreathing.
+                            <br><strong>Knowledge is the first step in breaking the cycle.<br></strong>
+                            Click <a class="link" href="/breathing-naturally">here</a> for a quick tip to get you
+                            started.
+                        </p>
+                        <br>
+                        <button class="btn btn-primary btn-md" type="button">Book Now</button>
+                    </div>
+                </div>
+
+                <div class="h-100 mb-4 p-5 bg-light border rounded">
+                    <h2 class="display-6 fw-bold">BREATHING MATTERS</h2>
+                    <p class="col-md-12 fs-5" style="text-align: justify">
+                        In, out, in, out. We do it 20.000 times a day without thinking about it. Yet too easily,
+                        breathing
+                        patterns can be disrupted causing troubling symptoms and anxiety. Breathing is about so much
+                        more than
+                        just
+                        bringing oxygen into the tissues. It stimulates our flight or fight response, it balances out
+                        pH, it
+                        allows us to communicate.
+                        And the way we breathe dictates how we feel. A fast, upper chest breathing pattern stimulates an
+                        alarm
+                        in the
+                        autonomic nervous system and we prepare for "battle." A slow, belly breathing pattern settles
+                        the body so that it can "rest and digest." Depending on our needs, we bounce between these two
+                        patterns.
+                        But sometimes, due to stresses and other triggers, we get stuck in "prepare for battle" mode.
+                        By bringing awareness to that and re-establishing a natural breathing pattern we can see that
+                        breathing
+                        truly does matter.</p>
+                    <button class="btn btn-primary btn-md" type="button">Book Now</button>
+                </div>
+
+                <div class="h-100 p-5 bg-light border rounded-3">
+                    <h2 class="display-6 fw-bold">WHEN GOOD BREATHING GOES BAD</h2>
+                    <p class="col-md-12 fs-5" style="text-align: justify">
+                        Sounds a bit like we're talking about the black sheep of the family. But in all seriousness,
+                        when we alter
+                        our
+                        breathing pattern away from how we were meant to breathe, our health deteriorates. An upper
+                        chest breathing
+                        pattern, coupled with an increased breath rate leads to overworked, tense neck and chest
+                        muscles,
+                        contributing
+                        to neck and chronic pain. This pattern also alters our breathing chemistry, changing our blood
+                        pH (acid-base
+                        balance), disrupting electrolyte balance and decreasing oxygen supply to our vital organs and
+                        tissues.
+                        Essentially it puts our body on high alert. This simply isn't sustainable and our health
+                        suffers.
+                        The good news is that this is all reversible. Armed with knowledge, awareness and tips to
+                        restore a natural
+                        breathing pattern you can combat bad breathing and its ill effects. Visit the treatment page for
+                        more
+                        information.
+                    </p>
+                    <button class="btn btn-primary btn-md" type="button">Book Now</button>
+                </div>
+            </div>
+        </section>
+    </div>
+    <!--Footer-->
+    <div class="container">
+        <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+            <p class="col-md-4 mb-0 text-muted">&copy; 2021 Breathe Right Clinic</p>
+        </footer>
+    </div>
+</body>
+</html>
